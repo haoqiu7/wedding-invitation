@@ -6,7 +6,7 @@
 
 $(document).ready(function() {
     // 创建音频对象
-    var audio = new Audio('mp3/一定要爱你.mp3');
+    var audio = new Audio('一定要爱你.mp3');
     audio.loop = true;      // 循环播放
     audio.volume = 0.6;     // 音量 0.6
 
