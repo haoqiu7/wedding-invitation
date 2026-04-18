@@ -1,4 +1,3 @@
-
         * {
             margin: 0;
             padding: 0;
@@ -16,9 +15,8 @@
             position: relative;
             overflow-x: hidden;
         }
-        /*#8b2c2d*/
 
-        /* 整页水印 —— 单个超大“囍”字，居中，不旋转，横跨页面 */
+        /* 整页水印 —— 单个超大“囍”字，居中，倾斜一定角度 */
         .page-watermark {
             position: fixed;
             top: 0;
@@ -43,8 +41,7 @@
             white-space: nowrap;
             user-select: none;
             letter-spacing: 0.1em;
-            /* 无旋转，垂直正向 */
-            transform: none;
+            transform: rotate(-25deg);    /* 倾斜角度，可根据喜好调整 */
         }
 
         /* 主请柬卡片 */
@@ -55,7 +52,7 @@
             background-image: radial-gradient(circle at 10% 20%, rgba(215, 185, 135, 0.08) 2%, transparent 2.5%);
             background-size: 28px 28px;
             border-radius: 32px;
-            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3), 0 0 0 12px #8b2c2d, 0 0 0 18px #8b2c2d;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3), 0 0 0 12px #f5e1b5, 0 0 0 18px #c0392b;
             padding: 40px 28px 48px;
             position: relative;
             transition: all 0.2s;
@@ -67,7 +64,7 @@
         .invitation-card::after {
             content: "❤";
             font-size: 20px;
-            color: #FF0000;
+            color: #d43f31;
             position: absolute;
             opacity: 0.3;
             font-family: monospace;
@@ -113,7 +110,6 @@
             font-size: 18px;
             font-weight: 600;
             margin: 0 6px;
-            color: #FF0010;
         }
 
         .main-text {
