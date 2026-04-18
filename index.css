@@ -1,0 +1,292 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #8b2c2d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Times New Roman', '宋体', 'SimSun', '华文楷书', 'KaiTi', 'Georgia', serif;
+            padding: 24px 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /*#8b2c2d*/
+
+        /* 整页水印 —— 单个超大“囍”字，居中，不旋转，横跨页面 */
+        .page-watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .page-watermark .watermark-text {
+            font-size: min(70vw, 500px);  /* 响应式宽度，横跨请柬 */
+            font-weight: 900;
+            font-family: '华文楷书', 'KaiTi', 'Times New Roman', serif;
+            color: #a52a1a;
+            opacity: 0.2;                /* 清晰可见但不干扰阅读 */
+            white-space: nowrap;
+            user-select: none;
+            letter-spacing: 0.1em;
+            /* 无旋转，垂直正向 */
+            transform: none;
+        }
+
+        /* 主请柬卡片 */
+        .invitation-card {
+            max-width: 560px;
+            width: 100%;
+            background: #fff9f0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(215, 185, 135, 0.08) 2%, transparent 2.5%);
+            background-size: 28px 28px;
+            border-radius: 32px;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3), 0 0 0 12px #8b2c2d, 0 0 0 18px #8b2c2d;
+            padding: 40px 28px 48px;
+            position: relative;
+            transition: all 0.2s;
+            z-index: 1;
+        }
+
+        /* 传统纹样点缀（角花） */
+        .invitation-card::before,
+        .invitation-card::after {
+            content: "❤";
+            font-size: 20px;
+            color: #FF0000;
+            position: absolute;
+            opacity: 0.3;
+            font-family: monospace;
+            z-index: 1;
+        }
+        .invitation-card::before {
+            top: 20px;
+            left: 25px;
+            transform: rotate(-15deg);
+        }
+        .invitation-card::after {
+            bottom: 20px;
+            right: 25px;
+            transform: rotate(15deg);
+        }
+
+        .double-happiness {
+            text-align: center;
+            font-size: 70px;
+            font-weight: 900;
+            letter-spacing: 16px;
+            color: #c92a1f;
+            margin-bottom: 20px;
+            font-family: '华文楷书', 'KaiTi', 'Times New Roman', serif;
+            text-shadow: 2px 2px 6px rgba(150, 40, 20, 0.2);
+        }
+
+        .greeting {
+            text-align: center;
+            font-size: 16px;
+            color: #5e3a2c;
+            letter-spacing: 2px;
+            border-top: 1px solid #e2cfaa;
+            border-bottom: 1px solid #e2cfaa;
+            display: inline-block;
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        .greeting span {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 6px;
+            color: #FF0010;
+        }
+
+        .main-text {
+            text-align: center;
+            color: #2c2418;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .classic-line {
+            margin: 18px 0;
+        }
+
+        .couple-name {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin: 28px 0 20px;
+            font-weight: 600;
+            font-size: 22px;
+            background: #fff4e4;
+            padding: 12px 0;
+            border-radius: 60px;
+            box-shadow: inset 0 0 0 1px #f7e5ce, 0 4px 8px rgba(0,0,0,0.02);
+        }
+
+        .couple-name div {
+            text-align: center;
+        }
+
+        .couple-name .role {
+            font-size: 14px;
+            color: #b4563a;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+
+        .couple-name .name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #b13b2a;
+            margin-top: 6px;
+            letter-spacing: 2px;
+        }
+
+        .info-block {
+            background: #fff5ea;
+            margin: 24px 0 18px;
+            padding: 18px 12px;
+            border-radius: 28px;
+            border: 1px solid #f7e2c6;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.03);
+            text-align: center;
+        }
+
+        .info-item {
+            margin: 16px 0;
+        }
+
+        .info-label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #b9513a;
+            letter-spacing: 2px;
+            background: #fff0e0;
+            display: inline-block;
+            padding: 0 12px;
+            border-radius: 30px;
+        }
+
+        .info-detail {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 8px;
+            color: #2d2b26;
+            line-height: 1.4;
+        }
+
+        .lunar-text {
+            font-size: 16px;
+            color: #8a5a44;
+            margin-top: 6px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .address-detail {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .parents {
+            margin-top: 38px;
+            text-align: center;
+            border-top: 1px dashed #e0cba6;
+            padding-top: 24px;
+            font-size: 16px;
+        }
+
+        .parents-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #a3432f;
+            margin: 8px 0 6px;
+            letter-spacing: 4px;
+        }
+
+        .invite-footer {
+            font-size: 15px;
+            color: #a85c3a;
+            margin-top: 8px;
+            letter-spacing: 2px;
+        }
+
+        .respect {
+            margin-top: 28px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            color: #7a432f;
+        }
+
+        .seal {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #bc7a5a;
+            font-family: monospace;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 500px) {
+            .invitation-card {
+                padding: 28px 18px 36px;
+            }
+            .double-happiness {
+                font-size: 56px;
+                letter-spacing: 10px;
+            }
+            .couple-name .name {
+                font-size: 22px;
+            }
+            .info-detail {
+                font-size: 18px;
+            }
+            .parents-name {
+                font-size: 20px;
+            }
+            .page-watermark .watermark-text {
+                font-size: min(80vw, 400px);
+            }
+        }
+
+        .snowfall-flakes {
+          /*.class类选择器*/
+          position: relative;
+          width: 20px !important;
+          height: 18px !important;
+        }
+        .snowfall-flakes:before,
+        .snowfall-flakes:after {
+          content: ''; /*不管有没有内容都必须写这句*/
+          width: 10px;
+          height: 16px;
+          position: absolute;
+          background: #f18699;
+          display: block; /*块级元素*/
+          border-radius: 10px 10px 0 0; /*圆角:左上 右上 右下 左下*/
+          transform: rotate(-45deg); /*css3变换:旋转*/
+          left: 10px; /*方位值:距离参考物左端的距离*/
+          top: 0px; /*距离参考物上端的距离*/
+        }
+        .snowfall-flakes:before {
+          transform: rotate(45deg);
+          left: 14px;
+        }
